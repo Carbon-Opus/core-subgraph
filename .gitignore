@@ -1,0 +1,14 @@
+node_modules
+build
+.history
+subgraph.yaml
+subgraph.local.yaml
+subgraph.ropsten.yaml
+subgraph.rinkeby.yaml
+subgraph.kovan.yaml
+subgraph.mainnet.yaml
+subgraph.polygon.yaml
+subgraph.mumbai.yaml
+.DS_Store
+
+.versionFilesList.json

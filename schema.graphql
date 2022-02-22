@@ -1,0 +1,25 @@
+# ID: `${CarbonOpus.address}`
+type CarbonOpus @entity {
+  id: ID!
+  owner: Bytes!
+
+  carbonSettings: CarbonSettings
+  carbonEconomics: CarbonEconomics
+}
+
+# ID: `${carbonSettings.address}`
+type CarbonSettings @entity {
+  id: ID!
+  owner: Bytes!
+
+  carbonOpus: CarbonOpus
+}
+
+# ID: `${carbonEconomics.address}`
+type CarbonEconomics @entity {
+  id: ID!
+  owner: Bytes!
+
+  carbonOpus: CarbonOpus
+  carbonSettings: CarbonSettings
+}

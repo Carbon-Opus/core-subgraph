@@ -1,0 +1,15 @@
+{
+  "network": "local",
+  "carbonEconomics": {
+    "address": "",
+    "startBlock": ""
+  },
+  "carbonSettings": {
+    "address": "",
+    "startBlock": ""
+  },
+  "carbonOpus": {
+    "address": "",
+    "startBlock": ""
+  }
+}

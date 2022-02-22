@@ -1,0 +1,47 @@
+{
+  "name": "@carbon-opus/protocol-subgraph",
+  "version": "0.1.0",
+  "description": "Subgraph for the Carbon-Opus Protocol",
+  "author": "Rob Secord <robsecord.eth>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Carbon-Opus/core-subgraph"
+  },
+  "keywords": [
+    "music",
+    "nft",
+    "subgraph",
+    "ethereum"
+  ],
+  "engines": {
+    "node": ">=14.16.1",
+    "npm": ">=6.14.4"
+  },
+  "scripts": {
+    "reinstall": "rm -rf node_modules/ && yarn",
+    "clean": "rm -rf build/ generated/",
+    "prepare:mainnet": "mustache networks/mainnet.json subgraph.template.yaml subgraph.mainnet.yaml",
+    "prepare:mumbai": "mustache networks/mumbai.json subgraph.template.yaml subgraph.mumbai.yaml",
+    "prepare:polygon": "mustache networks/polygon.json subgraph.template.yaml subgraph.polygon.yaml",
+    "gen:mainnet": "graph codegen subgraph.mainnet.yaml",
+    "gen:mumbai": "graph codegen subgraph.mumbai.yaml",
+    "gen:polygon": "graph codegen subgraph.polygon.yaml",
+    "deploy:mainnet": "graph deploy --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ carbon-opus/ethereum-universe subgraph.mainnet.yaml",
+    "deploy:mumbai": "graph deploy --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ --network Mumbai carbon-opus/mumbai-universe subgraph.mumbai.yaml",
+    "deploy:polygon": "graph deploy --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ --network Matic carbon-opus/polygon-universe subgraph.polygon.yaml",
+    "pub:beta": "yarn publish --tag beta --access public",
+    "pub:latest": "yarn publish --tag latest --access public",
+    "vbump": "version update -p",
+    "codegen": "graph codegen",
+    "build": "graph build",
+    "auth": "graph auth https://api.thegraph.com/deploy/"
+  },
+  "dependencies": {
+    "@graphprotocol/graph-ts": "^0.24.1"
+  },
+  "devDependencies": {
+    "@graphprotocol/graph-cli": "^0.25.1",
+    "mustache": "4.0.1"
+  }
+}

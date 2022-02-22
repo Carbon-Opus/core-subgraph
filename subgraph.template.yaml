@@ -1,0 +1,90 @@
+specVersion: 0.0.2
+features:
+  - nonFatalErrors
+schema:
+  file: ./schema.graphql
+dataSources:
+  - name: CarbonOpus
+    kind: ethereum/contract
+    network: {{network}}
+    source:
+      address: "{{carbonOpus.address}}"
+      abi: CarbonOpus
+      startBlock: {{carbonOpus.startBlock}}
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      file: ./src/mappingForCarbonOpus.ts
+      entities:
+        - CarbonOpus
+      abis:
+        - name: CarbonOpus
+          file: ./abis/CarbonOpus.json
+        - name: CarbonSettings
+          file: ./abis/CarbonSettings.json
+        - name: CarbonEconomics
+          file: ./abis/CarbonEconomics.json
+      eventHandlers:
+        - event: Initialized(indexed address,string)
+          handler: handleInitialized
+        - event: OwnershipTransferred(indexed address,indexed address)
+          handler: handleOwnershipTransferred
+        - event: ControllerSet(indexed address,string)
+          handler: handleControllerSet
+  - name: CarbonSettings
+    kind: ethereum/contract
+    network: {{network}}
+    source:
+      address: "{{carbonSettings.address}}"
+      abi: CarbonSettings
+      startBlock: {{carbonSettings.startBlock}}
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      file: ./src/mappingForCarbonSettings.ts
+      entities:
+        - CarbonSettings
+      abis:
+        - name: CarbonOpus
+          file: ./abis/CarbonOpus.json
+        - name: CarbonSettings
+          file: ./abis/CarbonSettings.json
+        - name: CarbonEconomics
+          file: ./abis/CarbonEconomics.json
+      eventHandlers:
+        - event: Initialized(indexed address,string)
+          handler: handleInitialized
+        - event: OwnershipTransferred(indexed address,indexed address)
+          handler: handleOwnershipTransferred
+        - event: ControllerSet(indexed address,string)
+          handler: handleControllerSet
+  - name: CarbonEconomics
+    kind: ethereum/contract
+    network: {{network}}
+    source:
+      address: "{{carbonEconomics.address}}"
+      abi: CarbonEconomics
+      startBlock: {{carbonEconomics.startBlock}}
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      file: ./src/mappingForCarbonEconomics.ts
+      entities:
+        - CarbonEconomics
+      abis:
+        - name: CarbonOpus
+          file: ./abis/CarbonOpus.json
+        - name: CarbonSettings
+          file: ./abis/CarbonSettings.json
+        - name: CarbonEconomics
+          file: ./abis/CarbonEconomics.json
+      eventHandlers:
+        - event: Initialized(indexed address,string)
+          handler: handleInitialized
+        - event: OwnershipTransferred(indexed address,indexed address)
+          handler: handleOwnershipTransferred
+        - event: ControllerSet(indexed address,string)
+          handler: handleControllerSet
