@@ -1,15 +1,15 @@
 {
   "network": "mumbai",
   "carbonEconomics": {
-    "address": "",
-    "startBlock": ""
+    "address": "0xD04c8bB1050506AD2775a6aed4E941EBc9e788E4",
+    "startBlock": "25176273"
   },
   "carbonSettings": {
-    "address": "",
-    "startBlock": ""
+    "address": "0xe9842767aE80F158899BFD96bb4b3fA992F52e58",
+    "startBlock": "25176273"
   },
   "carbonOpus": {
-    "address": "",
-    "startBlock": ""
+    "address": "0xf99821b1e55a2DC9CA2c02eaD4B1df4eeeDAC101",
+    "startBlock": "25176273"
   }
 }

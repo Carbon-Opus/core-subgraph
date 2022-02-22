@@ -23,10 +23,10 @@ export function handleOwnershipTransferred(event: OwnershipTransferred): void {
 export function handleControllerSet(event: ControllerSet): void {
   const _CarbonEconomics = loadOrCreateCarbonEconomics(event.address);
   if (event.params.controllerId == 'carbonopus') {
-    _CarbonEconomics.carbonOpus = event.params.controllerAddress.toHex();
+    _CarbonEconomics.carbonOpus = event.params.controller.toHex();
   }
   if (event.params.controllerId == 'settings') {
-    _CarbonEconomics.carbonSettings = event.params.controllerAddress.toHex();
+    _CarbonEconomics.carbonSettings = event.params.controller.toHex();
   }
   _CarbonEconomics.save();
 }

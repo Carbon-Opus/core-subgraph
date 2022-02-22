@@ -54,7 +54,7 @@ dataSources:
         - name: CarbonEconomics
           file: ./abis/CarbonEconomics.json
       eventHandlers:
-        - event: Initialized(indexed address,string)
+        - event: Initialized(indexed address)
           handler: handleInitialized
         - event: OwnershipTransferred(indexed address,indexed address)
           handler: handleOwnershipTransferred
@@ -82,7 +82,7 @@ dataSources:
         - name: CarbonEconomics
           file: ./abis/CarbonEconomics.json
       eventHandlers:
-        - event: Initialized(indexed address,string)
+        - event: Initialized(indexed address)
           handler: handleInitialized
         - event: OwnershipTransferred(indexed address,indexed address)
           handler: handleOwnershipTransferred

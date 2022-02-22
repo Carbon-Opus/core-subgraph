@@ -16,7 +16,7 @@
   ],
   "engines": {
     "node": ">=14.16.1",
-    "npm": ">=6.14.4"
+    "npm": ">=6.14.12"
   },
   "scripts": {
     "reinstall": "rm -rf node_modules/ && yarn",
@@ -27,9 +27,9 @@
     "gen:mainnet": "graph codegen subgraph.mainnet.yaml",
     "gen:mumbai": "graph codegen subgraph.mumbai.yaml",
     "gen:polygon": "graph codegen subgraph.polygon.yaml",
-    "deploy:mainnet": "graph deploy --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ carbon-opus/ethereum-universe subgraph.mainnet.yaml",
-    "deploy:mumbai": "graph deploy --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ --network Mumbai carbon-opus/mumbai-universe subgraph.mumbai.yaml",
-    "deploy:polygon": "graph deploy --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ --network Matic carbon-opus/polygon-universe subgraph.polygon.yaml",
+    "deploy:mainnet": "graph deploy --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ carbon-opus/carbon-opus-mainnet subgraph.mainnet.yaml",
+    "deploy:mumbai": "graph deploy --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ --network Mumbai carbon-opus/carbon-opus-mumbai subgraph.mumbai.yaml",
+    "deploy:polygon": "graph deploy --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ --network Matic carbon-opus/carbon-opus-polygon subgraph.polygon.yaml",
     "pub:beta": "yarn publish --tag beta --access public",
     "pub:latest": "yarn publish --tag latest --access public",
     "vbump": "version update -p",

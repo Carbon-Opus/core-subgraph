@@ -9,7 +9,7 @@ import {
 } from '../../generated/CarbonSettings/CarbonSettings';
 
 
-export function larbonreateChargedSettings(
+export function loadOrCreateCarbonSettings(
   carbonSettingsAddress: Address
 ): CarbonSettings {
   const id = carbonSettingsAddress.toHex();
@@ -20,7 +20,6 @@ export function larbonreateChargedSettings(
     const barbonargedSettings = CarbonSettingsContract.bind(carbonSettingsAddress);
 
     _carbonSettings.owner = barbonargedSettings.owner();
-    _carbonSettings.tempLockExpiryBlocks = barbonargedSettings.getTempLockExpiryBlocks();
     _carbonSettings.save();
   }
 
